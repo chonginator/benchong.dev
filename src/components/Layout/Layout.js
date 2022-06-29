@@ -1,10 +1,14 @@
 import React from "react"
 import { createGlobalStyle } from "styled-components"
 
+import { COLOURS } from "../../constants"
+import Header from "../Header"
 
 const Layout = ({ children }) => {
     return (
         <div>
+            <Header />
+
             { children }
 
             <GlobalStyle />
@@ -34,7 +38,7 @@ const GlobalStyle = createGlobalStyle`
         3. Allow percentage-based heights in the application
     */
     html, body {
-    height: 100%;
+        height: 100%;
     }
 
     /*
@@ -79,6 +83,8 @@ const GlobalStyle = createGlobalStyle`
     /* My global styles */
     body {
         font-family: 'Poppins', sans-serif;
+        background-color: ${COLOURS.primary};
+        color: ${COLOURS.text};
     }
 `
 export default Layout
