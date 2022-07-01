@@ -24,6 +24,11 @@ const ButtonWrapper = styled.button`
     cursor: pointer;
     padding: 0.5em 1em;
     text-decoration: none;
+
+    :hover,
+    :focus {
+        opacity: 0.9;
+    }
 `
 
 export default Button

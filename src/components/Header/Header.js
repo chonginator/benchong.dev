@@ -5,13 +5,13 @@ import Button from "../Button"
 
 const Header = () => {
     return (
-        <HeaderWrapper>
+        <Wrapper>
             <Button href='/resume.pdf'>Resume</Button>
-        </HeaderWrapper>
+        </Wrapper>
     )
 }
 
-const HeaderWrapper = styled.header`
+const Wrapper = styled.header`
     display: flex;
     justify-content: flex-end;
 `
