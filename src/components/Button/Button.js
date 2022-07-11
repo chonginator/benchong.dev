@@ -18,7 +18,7 @@ const ButtonWrapper = styled.button`
     font-size: 1.25rem;
     font-weight: ${WEIGHTS.bold};
     color: ${COLOURS.primary};
-    background-color: ${COLOURS.highlight};
+    background-color: ${COLOURS.text};
     border: none;
     border-radius: 4px;
     cursor: pointer;

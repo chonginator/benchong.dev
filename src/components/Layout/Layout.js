@@ -85,7 +85,7 @@ const GlobalStyle = createGlobalStyle`
 
     /* My global styles */
     body {
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Barlow', sans-serif;
         background-color: ${COLOURS.primary};
         color: ${COLOURS.text};
     }
