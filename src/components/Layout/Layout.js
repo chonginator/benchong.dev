@@ -2,12 +2,13 @@ import React from "react"
 import { createGlobalStyle } from "styled-components"
 
 import { COLOURS } from "../../constants"
+import MaxWidthWrapper from "../MaxWidthWrapper"
 import Header from "../Header"
 import Footer from "../Footer"
 
 const Layout = ({ children }) => {
     return (
-        <div>
+        <MaxWidthWrapper>
             <Header />
 
             { children }
@@ -15,7 +16,7 @@ const Layout = ({ children }) => {
             <Footer />
 
             <GlobalStyle />
-        </div>
+        </MaxWidthWrapper>
     )
 }
 

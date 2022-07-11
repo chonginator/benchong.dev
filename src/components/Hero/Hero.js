@@ -7,14 +7,18 @@ const Hero = () => {
     return (
         <HeroSection>
             <SilhouetteText text="Hello, World!"/>
-            <p>I'm a frontend developer who loves making useful, beautiful things with code</p>
+            <SubHeading>I'm Ben Chong, a frontend developer who loves making useful, beautiful things with code.</SubHeading>
         </HeroSection>
     )
 }
 
 const HeroSection = styled.section`
-    /* border: 1px solid red; */
     height: 100vh;
+`
+
+const SubHeading = styled.p`
+    font-size: 1.125rem;
+    text-align: center;
 `
 
 export default Hero

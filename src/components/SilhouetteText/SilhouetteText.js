@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import { COLOURS, WEIGHTS } from "../../constants"
+import { COLOURS, WEIGHTS, QUERIES } from "../../constants"
 const Color = require("color")
 
 const SilhouetteText = ({
@@ -39,6 +39,7 @@ const SilhouetteText = ({
 const SilhouetteWrapper = styled.div`
     display: grid;
     justify-content: center;
+    align-items: center;
 `
 
 const TEXT_COLOUR = Color.hsl(COLOURS.text)
@@ -46,7 +47,7 @@ const Silhouette = styled.div`
     grid-column: 1;
     grid-row: 1;
     font-size: 5rem;
-    font-weight: 700; 
+    font-weight: ${WEIGHTS.bold}; 
     text-align: center;
     z-index: ${p => p.numLayers - p.index};
     transform: scale(${p => 1 - (p.index * p.scaleFactor)});
@@ -58,6 +59,14 @@ const Silhouette = styled.div`
         0 -1px 0 ${p => TEXT_COLOUR.lighten(p.index * p.lightenFactor)},
         1px 0 0 ${p => TEXT_COLOUR.lighten(p.index * p.lightenFactor)};
     text-transform: uppercase;
+
+    @media ${QUERIES.tabletAndUp} {
+        font-size: 7rem;
+    }
+
+    @media ${QUERIES.laptopAndUp} {
+        font-size: 9rem;
+    }
 `
 
 export default SilhouetteText
