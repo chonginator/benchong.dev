@@ -49,7 +49,7 @@ const Silhouette = styled.div`
     font-size: 5rem;
     font-weight: ${WEIGHTS.bold}; 
     text-align: center;
-    z-index: ${p => p.numLayers - p.index};
+    z-index: ${p => - p.index};
     transform: scale(${p => 1 - (p.index * p.scaleFactor)});
     color: ${p => p.index === 0 ? COLOURS.text : COLOURS.primary};
     text-shadow:

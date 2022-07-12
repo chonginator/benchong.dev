@@ -13,7 +13,7 @@ const Hero = () => {
 }
 
 const HeroSection = styled.section`
-    height: 100vh;
+    margin-top: 10vh;
 `
 
 const SubHeading = styled.p`
