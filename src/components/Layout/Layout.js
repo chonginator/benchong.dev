@@ -1,5 +1,5 @@
 import React from "react"
-import { createGlobalStyle } from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
 
 import { COLOURS } from "../../constants"
 import MaxWidthWrapper from "../MaxWidthWrapper"
@@ -11,7 +11,9 @@ const Layout = ({ children }) => {
         <MaxWidthWrapper>
             <Header />
 
-            { children }
+            <MainWrapper>
+                { children }
+            </MainWrapper>
 
             <Footer />
 
@@ -19,6 +21,13 @@ const Layout = ({ children }) => {
         </MaxWidthWrapper>
     )
 }
+
+const MainWrapper = styled.div`
+    /* border: 5px solid blue; */
+    display: grid;
+    gap: 4em;
+    padding-top: 4em;
+`
 
 const GlobalStyle = createGlobalStyle`
     /* Josh Comeau's CSS reset */
@@ -87,6 +96,7 @@ const GlobalStyle = createGlobalStyle`
     /* My global styles */
     body {
         font-family: 'Barlow', sans-serif;
+        font-size: 1.125rem;
         background-color: ${COLOURS.primary};
         color: ${COLOURS.text};
     }

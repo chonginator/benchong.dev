@@ -8,8 +8,6 @@ const MaxWidthWrapper = styled.div`
     margin-right: auto;
     padding-left: 1.5em;
     padding-right: 1.5em;
-    height: 120vh;
-    border: 1px solid blue;
 `
 
 export default MaxWidthWrapper

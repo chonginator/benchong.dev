@@ -5,19 +5,14 @@ import SilhouetteText from "../SilhouetteText"
 
 const Hero = () => {
     return (
-        <HeroSection>
+        <section>
             <SilhouetteText text="Hello, World!"/>
             <SubHeading>I'm Ben Chong, a frontend developer who loves making useful, beautiful things with code.</SubHeading>
-        </HeroSection>
+        </section>
     )
 }
 
-const HeroSection = styled.section`
-    margin-top: 10vh;
-`
-
 const SubHeading = styled.p`
-    font-size: 1.125rem;
     text-align: center;
 `
 
