@@ -10,7 +10,6 @@ const Projects = () => {
             allMdx(sort: {fields: id, order: ASC}) {
                 nodes {
                     frontmatter {
-                        id
                         title
                         cover_image_alt
                         description
@@ -67,7 +66,7 @@ const Projects = () => {
 const ProjectsSection = styled.section`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1em;
+    gap: 2.5em;
 `
 
 export default Projects

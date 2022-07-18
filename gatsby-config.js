@@ -9,11 +9,23 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
-    "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+          gatsbyRemarkPlugins: [
+            {
+              resolve: `gatsby-remark-images`,
+              options: {
+                maxWidth: 1200,
+              },
+            },
+          ],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
       options: {
         "name": "images",
         "path": `${__dirname}/src/images/`
@@ -21,7 +33,7 @@ module.exports = {
       __key: "images"
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
         "name": "pages",
         "path": `${__dirname}/src/pages/`
@@ -29,7 +41,7 @@ module.exports = {
       __key: "pages"
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
         "name": "projects",
         "path": `${__dirname}/projects/`
