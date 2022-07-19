@@ -29,7 +29,7 @@ const Projects = () => {
             }
         }
     `)
-    console.log(data)
+
     const projects = data.allMdx.nodes.map(node => {
         // Destructure frontmatter fields
         const {

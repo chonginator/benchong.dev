@@ -20,7 +20,6 @@ const ProjectPage = ({ data }) => {
             body
         }
     } = data
-    console.log(tech_stack)
 
     return (
         <Layout>
@@ -30,7 +29,7 @@ const ProjectPage = ({ data }) => {
                     <Field>Tech Stack</Field>
                     <span>
                         {
-                            tech_stack.join(', ')
+                            tech_stack && tech_stack.join(', ')
                         }
                     </span>
                 </div>
@@ -39,7 +38,7 @@ const ProjectPage = ({ data }) => {
                     <Field>Links</Field>
                     <ProjectLinks>
                         {
-                            links.map(link =>
+                            links && links.map(link =>
                                 <li key={link}>
                                     <a
                                         href={link}
