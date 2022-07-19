@@ -1,7 +1,7 @@
 import React from "react"
 import styled, { createGlobalStyle } from "styled-components"
 
-import { COLOURS } from "../../constants"
+import { COLOURS, QUERIES } from "../../constants"
 import MaxWidthWrapper from "../MaxWidthWrapper"
 import Header from "../Header"
 import Footer from "../Footer"
@@ -23,9 +23,8 @@ const Layout = ({ children }) => {
 }
 
 const MainWrapper = styled.div`
-    /* border: 5px solid blue; */
     display: grid;
-    gap: 4em;
+    gap: 5em;
     padding-top: 4em;
 `
 
@@ -95,10 +94,24 @@ const GlobalStyle = createGlobalStyle`
 
     /* My global styles */
     body {
-        font-family: 'Barlow', sans-serif;
         font-size: 1.125rem;
+        font-family: 'Barlow', sans-serif;
         background-color: ${COLOURS.primary};
         color: ${COLOURS.text};
+
     }
+
+    h2 {
+        font-size: 1.5rem;
+
+        @media ${QUERIES.tabletAndUp} {
+            font-size: 2rem;
+        }
+    }
+
+    a {
+        color: inherit;
+    }
+
 `
 export default Layout

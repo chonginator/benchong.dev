@@ -7,7 +7,7 @@ import ProjectCard from "../ProjectCard"
 const Projects = () => {
     const data = useStaticQuery(graphql`
         query {
-            allMdx(sort: {fields: id, order: ASC}) {
+            allMdx(sort: {fields: id, order: ASC}, filter: {fileAbsolutePath: {regex: "/projects/"}}) {
                 nodes {
                     frontmatter {
                         title

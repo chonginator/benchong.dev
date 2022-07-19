@@ -1,20 +1,23 @@
 import React from "react"
+import { Link } from "gatsby"
 import styled from "styled-components"
 
 import { COLOURS, WEIGHTS } from "../../constants"
 
-const Button = ({ href, children }) => {
+const LinkComponent = ({ href, type="internal", children }) => {
     return (
-        <ButtonWrapper
+        <Wrapper
             href={href}
-            target="_blank"
-            as={href ? 'a' : 'button'}>
+            to={type === "internal" && href}
+            target={type === "internal" ? "_self" : "_blank"}
+            as={type === "internal" ? Link : "a"}
+        >
             { children }
-        </ButtonWrapper>
+        </Wrapper>
     )
 }
 
-const ButtonWrapper = styled.button`
+const Wrapper = styled.a`
     font-size: 1.25rem;
     font-weight: ${WEIGHTS.bold};
     color: ${COLOURS.primary};
@@ -31,4 +34,4 @@ const ButtonWrapper = styled.button`
     }
 `
 
-export default Button
+export default LinkComponent

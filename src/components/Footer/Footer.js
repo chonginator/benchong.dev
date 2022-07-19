@@ -24,6 +24,8 @@ const Wrapper = styled.footer`
     display: flex;
     justify-content: flex-end;
     gap: 1em;
+    padding-top: 5em;
+    padding-bottom: 1.25em;
 `
 
 const Links = styled.div`
@@ -32,9 +34,10 @@ const Links = styled.div`
 `
 
 const Link = styled.a`
-    text-decoration: none;
+    text-decoration: unset;
     color: inherit;
     
+    :focus,
     :hover {
         text-decoration: revert;
     }

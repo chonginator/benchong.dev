@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 
-import { COLOURS, WEIGHTS } from "../../constants"
+import { COLOURS, WEIGHTS, QUERIES } from "../../constants"
 
 const ProjectCard = ({
     coverImage,
@@ -24,7 +24,7 @@ const ProjectCard = ({
             </CardHeader>
 
             <CardBody>
-                <h2>{title}</h2>
+                <CardTitle>{title}</CardTitle>
 
                 {comingSoon && <CardSubtitle>Coming Soon</CardSubtitle>}
 
@@ -52,6 +52,14 @@ const CoverImage = styled(GatsbyImage)`
 
 const CardBody = styled.div`
     margin-top: 1.5em;
+`
+
+const CardTitle = styled.h2`
+    font-size: 1.2rem;
+
+    @media ${QUERIES.tabletAndUp} {
+        font-size: revert;
+    }
 `
 
 const CardSubtitle = styled.span`

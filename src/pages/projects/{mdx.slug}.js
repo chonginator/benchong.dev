@@ -41,12 +41,12 @@ const ProjectPage = ({ data }) => {
                         {
                             links.map(link =>
                                 <li key={link}>
-                                    <Link
+                                    <a
                                         href={link}
                                         target="_blank"
                                     >
                                         Visit website
-                                    </Link>
+                                    </a>
                                 </li>
                             )
                         }
@@ -87,7 +87,6 @@ const ProjectTitle = styled.h1`
 `
 
 const ProjectFrontmatter = styled.div`
-    /* border: 1px solid red; */
     display: flex;
     gap: 2.5em;
 `
@@ -101,12 +100,6 @@ const Field = styled.span`
 const ProjectLinks = styled.ul`
     list-style-type: none;
     padding-left: 0;
-`
-
-const Link = styled.a`
-    :visited {
-        color: unset;
-    }
 `
 
 export default ProjectPage
