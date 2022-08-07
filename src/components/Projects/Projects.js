@@ -21,6 +21,7 @@ const Projects = () => {
                                     width: 480
                                     height: 320
                                     placeholder: BLURRED
+                                    transformOptions: {cropFocus: CENTER}
                                 )
                             }
                         }
