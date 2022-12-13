@@ -1,32 +1,30 @@
-import React from "react"
-import styled, { createGlobalStyle } from "styled-components"
+import React from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
 
-import { COLOURS, QUERIES } from "../../constants"
-import MaxWidthWrapper from "../MaxWidthWrapper"
-import Header from "../Header"
-import Footer from "../Footer"
+import { COLOURS, QUERIES } from '../../constants';
+import MaxWidthWrapper from '../MaxWidthWrapper';
+import Header from '../Header';
+import Footer from '../Footer';
 
 const Layout = ({ children }) => {
-    return (
-        <MaxWidthWrapper>
-            <Header />
+  return (
+    <MaxWidthWrapper>
+      <Header />
 
-            <MainWrapper>
-                { children }
-            </MainWrapper>
+      <MainWrapper>{children}</MainWrapper>
 
-            <Footer />
+      <Footer />
 
-            <GlobalStyle />
-        </MaxWidthWrapper>
-    )
-}
+      <GlobalStyle />
+    </MaxWidthWrapper>
+  );
+};
 
 const MainWrapper = styled.div`
-    display: grid;
-    gap: 5em;
-    padding-top: 4em;
-`
+  display: grid;
+  gap: 5em;
+  padding-top: 4em;
+`;
 
 const GlobalStyle = createGlobalStyle`
     /* Josh Comeau's CSS reset */
@@ -113,5 +111,5 @@ const GlobalStyle = createGlobalStyle`
         color: inherit;
     }
 
-`
-export default Layout
+`;
+export default Layout;

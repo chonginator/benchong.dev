@@ -5,55 +5,53 @@ module.exports = {
     author: `Ben Chong`,
   },
   plugins: [
-    "gatsby-plugin-styled-components",
-    "gatsby-plugin-image",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-image',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-          gatsbyRemarkPlugins: [
-            {
-              resolve: `gatsby-remark-images`,
-              options: {
-                maxWidth: 1200,
-              },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
             },
-          ],
+          },
+        ],
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        "name": "pages",
-        "path": `${__dirname}/src/pages/`
+        name: 'pages',
+        path: `${__dirname}/src/pages/`,
       },
-      __key: "pages"
+      __key: 'pages',
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        "name": "projects",
-        "path": `${__dirname}/content/projects/`
-      }
+        name: 'projects',
+        path: `${__dirname}/content/projects/`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        "name": "about",
-        "path": `${__dirname}/content/about/`
-      }
+        name: 'about',
+        path: `${__dirname}/content/about/`,
+      },
     },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `Barlow:400,700`
-        ],
-        display: 'swap'
-      }
-    }
-  ]
+        fonts: [`Barlow:400,700`],
+        display: 'swap',
+      },
+    },
+  ],
 };

@@ -1,1 +1,1 @@
-export { default } from "./SilhouetteText"
+export { default } from './SilhouetteText';
