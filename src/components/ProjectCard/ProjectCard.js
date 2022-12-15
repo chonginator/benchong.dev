@@ -48,11 +48,14 @@ const CardHeader = styled.div`
   border: 1px solid ${COLOURS.text};
   width: fit-content;
   border-radius: 1rem;
-  overflow: hidden;
 `;
 
 const CardImage = styled(GatsbyImage)`
   filter: ${(p) => p.comingSoon && 'blur(5px)'};
+
+  img {
+    border-radius: 1rem;
+  }
 `;
 
 const CardBody = styled.div`

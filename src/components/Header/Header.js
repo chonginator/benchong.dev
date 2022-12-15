@@ -22,6 +22,7 @@ const Header = () => {
 
 const Wrapper = styled.header`
   display: flex;
+  align-items: center;
   position: sticky;
   top: 0;
   padding-top: 1.25em;
