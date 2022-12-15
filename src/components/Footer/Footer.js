@@ -35,7 +35,7 @@ const Link = styled.a`
 
   :focus,
   :hover {
-    text-decoration: revert;
+    text-decoration: underline;
   }
 `;
 
