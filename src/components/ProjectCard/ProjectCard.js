@@ -13,21 +13,31 @@ const ProjectCard = ({
   slug,
   comingSoon,
 }) => {
+  const cardImage = (
+    <CardImage
+      image={getImage(coverImage)}
+      alt={coverImageAlt}
+      comingSoon={comingSoon}
+    />
+  );
+
   return (
     <article>
       <CardHeader>
-        <StyledLink to={`/projects/${slug}`}>
-          <CardImage
-            image={getImage(coverImage)}
-            alt={coverImageAlt}
-            comingSoon={comingSoon}
-          />
-        </StyledLink>
+        {comingSoon ? (
+          cardImage
+        ) : (
+          <StyledLink to={`/projects/${slug}`}>{cardImage}</StyledLink>
+        )}
       </CardHeader>
 
       <CardBody>
         <CardTitle>
-          <StyledLink to={`/projects/${slug}`}>{title}</StyledLink>
+          {comingSoon ? (
+            title
+          ) : (
+            <StyledLink to={`/projects/${slug}`}>{title}</StyledLink>
+          )}
         </CardTitle>
 
         {comingSoon && <CardSubtitle>Coming Soon</CardSubtitle>}
@@ -95,7 +105,7 @@ const StyledLink = styled(Link)`
 
   :focus,
   :hover {
-    text-decoration: revert;
+    text-decoration: underline;
   }
 `;
 
