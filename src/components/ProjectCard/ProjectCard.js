@@ -16,15 +16,19 @@ const ProjectCard = ({
   return (
     <article>
       <CardHeader>
-        <CoverImage
-          image={getImage(coverImage)}
-          alt={coverImageAlt}
-          comingSoon={comingSoon}
-        />
+        <StyledLink to={`/projects/${slug}`}>
+          <CardImage
+            image={getImage(coverImage)}
+            alt={coverImageAlt}
+            comingSoon={comingSoon}
+          />
+        </StyledLink>
       </CardHeader>
 
       <CardBody>
-        <CardTitle>{title}</CardTitle>
+        <CardTitle>
+          <StyledLink to={`/projects/${slug}`}>{title}</StyledLink>
+        </CardTitle>
 
         {comingSoon && <CardSubtitle>Coming Soon</CardSubtitle>}
 
@@ -33,7 +37,7 @@ const ProjectCard = ({
 
       <CardFooter>
         {!comingSoon && (
-          <ProjectLink to={`/projects/${slug}`}>Read case study</ProjectLink>
+          <StyledLink to={`/projects/${slug}`}>Read case study</StyledLink>
         )}
       </CardFooter>
     </article>
@@ -42,13 +46,13 @@ const ProjectCard = ({
 
 const CardHeader = styled.div`
   border: 1px solid ${COLOURS.text};
-  border-radius: 1rem;
   width: fit-content;
+  border-radius: 1rem;
+  overflow: hidden;
 `;
 
-const CoverImage = styled(GatsbyImage)`
+const CardImage = styled(GatsbyImage)`
   filter: ${(p) => p.comingSoon && 'blur(5px)'};
-  border-radius: inherit;
 `;
 
 const CardBody = styled.div`
@@ -77,9 +81,10 @@ const CardFooter = styled.div`
   margin-top: 1em;
 `;
 
-const ProjectLink = styled(Link)`
+const StyledLink = styled(Link)`
   font-weight: ${WEIGHTS.bold};
   text-decoration: none;
+  overflow: hidden;
 
   :visited {
     color: unset;
