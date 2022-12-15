@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 
-const useMousePosition = () => {
+const useMousePosition = (initialMousePosition) => {
   const [mousePosition, setMousePosition] = useState({
-    x: window.innerWidth / 2,
-    y: window.innerHeight / 2,
+    x: initialMousePosition.x || null,
+    y: initialMousePosition.y || null,
   });
 
   useEffect(() => {

@@ -3,7 +3,10 @@ import useMousePosition from './useMousePosition';
 import mapRange from '../helpers/mapRange';
 
 const useLayeredMouseParallaxAnimation = ({ refs, limitX, limitY, ease }) => {
-  const mousePosition = useMousePosition();
+  const mousePosition = useMousePosition({
+    x: window.innerWidth / 2,
+    y: window.innerHeight / 2,
+  });
   const animation = () => {
     const { x, y } = mousePosition;
     const posX = mapRange(0, window.innerWidth, -limitX, limitX)(x);
