@@ -6,7 +6,7 @@ import Projects from '../components/Projects';
 import About from '../components/About';
 import Contact from '../components/Contact';
 
-const IndexPage = () => {
+const IndexPage = (props) => {
   return (
     <Layout>
       <Hero />

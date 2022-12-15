@@ -4,9 +4,10 @@ import styled from 'styled-components';
 
 import { COLOURS, WEIGHTS } from '../../constants';
 
-const LinkComponent = ({ href, type = 'internal', children }) => {
+const LinkComponent = ({ className, href, type = 'internal', children }) => {
   return (
     <Wrapper
+      className={className}
       href={href}
       to={type === 'internal' && href}
       target={type === 'internal' ? '_self' : '_blank'}
