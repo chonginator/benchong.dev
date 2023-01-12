@@ -31,8 +31,8 @@ const SilhouetteText = ({
         scaleFactor={scaleFactor}
         lightenFactor={lightenFactor}
       >
-        {text.split(' ').map((word) => (
-          <div>{word}</div>
+        {text.split(' ').map((word, index) => (
+          <div key={index}>{word}</div>
         ))}
       </Silhouette>
     ));
