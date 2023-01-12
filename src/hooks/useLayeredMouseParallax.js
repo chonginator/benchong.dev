@@ -1,13 +1,21 @@
 import useAnimationFrame from './useAnimationFrame';
 import useMousePosition from './useMousePosition';
-import mapRange from '../helpers/mapRange';
+import NumberRange from '../utils/NumberRange';
+import mapRange from '../utils/mapRange';
 
 const useLayeredMouseParallaxAnimation = ({ refs, limitX, limitY, ease }) => {
   const mousePosition = useMousePosition();
   const animation = () => {
     const { x, y } = mousePosition;
-    const posX = mapRange(0, window.innerWidth, -limitX, limitX)(x);
-    const posY = mapRange(0, window.innerHeight, -limitY, limitY)(y);
+
+    const posX = mapRange(
+      new NumberRange(0, window.innerWidth),
+      new NumberRange(-limitX, limitX)
+    )(x);
+    const posY = mapRange(
+      new NumberRange(0, window.innerHeight),
+      new NumberRange(-limitY, limitY)
+    )(y);
 
     refs.current.forEach((ref, index) => {
       const currentX = parseFloat(ref.style.getPropertyValue('--x')) || 0;
