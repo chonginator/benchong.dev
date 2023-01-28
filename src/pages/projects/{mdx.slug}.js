@@ -24,26 +24,28 @@ const ProjectPage = ({ data }) => {
   return (
     <Layout>
       <ProjectTitle>{title}</ProjectTitle>
-      <ProjectFrontmatter>
-        <div>
-          <Field>Tech Stack</Field>
-          <span>{tech_stack && tech_stack.join(', ')}</span>
-        </div>
+      {(tech_stack || links) && (
+        <ProjectFrontmatter>
+          <div>
+            {tech_stack && <Field>Tech Stack</Field>}
+            <span>{tech_stack && tech_stack.join(', ')}</span>
+          </div>
 
-        <div>
-          <Field>Links</Field>
-          <ProjectLinks>
-            {links &&
-              links.map((link) => (
-                <li key={link}>
-                  <a href={link} target="_blank">
-                    Visit website
-                  </a>
-                </li>
-              ))}
-          </ProjectLinks>
-        </div>
-      </ProjectFrontmatter>
+          <div>
+            {links && <Field>Links</Field>}
+            <ProjectLinks>
+              {links &&
+                links.map((link) => (
+                  <li key={link}>
+                    <a href={link} target="_blank">
+                      Visit website
+                    </a>
+                  </li>
+                ))}
+            </ProjectLinks>
+          </div>
+        </ProjectFrontmatter>
+      )}
       <main>
         <MDXRenderer>{body}</MDXRenderer>
       </main>
