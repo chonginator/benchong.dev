@@ -1,19 +1,18 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-
 import ProjectCard from '../ProjectCard';
 
-const Projects = () => {
+const FrontendMentorProjects = () => {
   const data = useStaticQuery(graphql`
     query {
       allMdx(
-        sort: { fields: frontmatter___id, order: ASC }
-        filter: { fileAbsolutePath: { regex: "/projects/[^/]+/[^/]+$/" } }
+        filter: {
+          fileAbsolutePath: { regex: "/projects/frontend-mentor/[^/]+/.+$/" }
+        }
       ) {
         nodes {
           frontmatter {
-            id
             title
             cover_image_alt
             description
@@ -70,4 +69,4 @@ const ProjectsSection = styled.section`
   gap: 2.5em;
 `;
 
-export default Projects;
+export default FrontendMentorProjects;
