@@ -9,7 +9,7 @@ const Hero = () => {
     <section>
       <SilhouetteText text="Hello, World!" />
       <SubHeading>
-        I'm <Name>Ben Chong</Name>, a frontend developer who loves making
+        I'm <Name>Ben Chong</Name>, a software engineer who loves building
         useful, beautiful things with code.
       </SubHeading>
     </section>
